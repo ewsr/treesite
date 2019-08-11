@@ -1,0 +1,15 @@
+p#notice = notice
+
+p
+  strong X:
+  = @tree.x
+p
+  strong Y:
+  = @tree.y
+p
+  strong Description:
+  = @tree.description
+
+=> link_to 'Edit', edit_tree_path(@tree)
+'|
+=< link_to 'Back', trees_path

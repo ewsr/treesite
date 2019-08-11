@@ -1,0 +1,27 @@
+p#notice = notice
+
+p
+  strong Genus:
+  = @species.genus
+p
+  strong Species:
+  = @species.species
+p
+  strong Cultivar:
+  = @species.cultivar
+p
+  strong Hybrid:
+  = @species.hybrid
+p
+  strong Common name:
+  = @species.common_name
+p
+  strong Description:
+  = @species.description
+p
+  strong Wiki:
+  = @species.wiki
+
+=> link_to 'Edit', edit_species_path(@species)
+'|
+=< link_to 'Back', species_index_path
