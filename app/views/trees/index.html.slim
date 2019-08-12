@@ -1,25 +1,35 @@
-h1 Listing trees
-
-table
-  thead
-    tr
-      th X
-      th Y
-      th Description
-      th
-      th
-      th
-
-  tbody
-    - @trees.each do |tree|
+.col-12
+  .row 
+    .header
+        h1 Trees of Columbia
+        h2 Learn more about the trees at Columbia University's Morningside Campus
+  .row.mt-n5
+    = render 'map.html.erb'
+p.text-right
+  = link_to '+ New Tree', new_tree_path
+.text-center.my-3
+  table.table
+    thead
       tr
-        td = tree.x
-        td = tree.y
-        td = tree.description
-        td = link_to 'Show', tree
-        td = link_to 'Edit', edit_tree_path(tree)
-        td = link_to 'Destroy', tree, data: { confirm: 'Are you sure?' }, method: :delete
-
-br
-
-= link_to 'New Tree', new_tree_path
+        th Common Name 
+        th Latin Name 
+        th x
+        th y 
+        th
+        th
+        th
+    tbody
+      - @trees.each do |tree|
+        - species = Species.find(tree.species_id)
+        tr
+          td = species.get_common_name
+          td = species.get_latin_name
+          td = tree.x
+          td = tree.y
+          td = link_to 'Show', tree
+          td = link_to 'Edit', edit_tree_path(tree)
+          td = link_to 'Destroy', tree, data: { confirm: 'Are you sure?' }, method: :delete
+.text-center
+  h4 Created by Emily Wang SEAS '22
+  h4 All photos by myself unless otherwise credited
+  h4 Photo submissions welcome in my UNI inbox (edw****)

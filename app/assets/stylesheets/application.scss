@@ -11,5 +11,137 @@
  * It is generally better to create a new file per style scope.
  *
  */
-
+ 
  @import "bootstrap";
+ @import 'bootstrap/utilities';
+
+ .tree {
+	opacity: 1; 
+	cursor: crosshair;
+	overflow: auto;
+}
+
+.tree:hover{
+	fill: #468a41
+}
+
+.decid {
+	fill: #11421d;
+}
+
+.everg {
+	fill: #003815
+}
+
+body {
+	background-color: #b5c7b9;
+	margin: 20px;
+	font-family: Palatino;
+	text-align: center;
+	overflow: auto;
+}
+
+.header{
+	display: flex;
+	flex-flow: row wrap;
+	align-items: flex-start;
+	justify-content: center;
+}
+
+.tree-header{
+	display: flex;
+	flex-flow: row wrap;
+	align-items: flex-start;
+	justify-content: space-between;
+}
+
+.footer {
+	text-align: center;
+}
+
+.content {
+	margin: 5px auto;
+	align-self: center;
+	background-color: #f7f4ed;
+	max-width: 800px;
+    padding: 50px 70px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.116), 0 6px 20px 0 rgba(0, 0, 0, 0.075);
+    
+}
+
+h1 {
+	font-size: 32px;
+	color: darkgreen;
+	margin-top: 4px;
+	margin-bottom: 4px;
+}
+
+h2 {
+	font-size: 16px;
+	color: #211c18;
+}
+
+h3 {
+	font-size: 12px;
+	color: #54463b;
+}
+
+h4 {
+	font-size: 12px;
+	color: lightsteelblue;
+}
+
+.map {
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 0px;
+	margin-bottom: 15px;
+	display: block;
+	width: 100%;
+	max-width: 700px;
+	border-radius:10px;
+	overflow:auto;
+}
+
+.treepic {
+  display: block;
+  margin-left: auto 10;
+  margin-right: auto 10;
+  margin-top: 20px;
+  margin-bottom:20px;
+  border-radius: 15px;
+  max-width: 100%;
+  height: auto;
+}
+
+.btn {
+	padding: 7px 15px;
+	text-align: center;
+	font-size: 14px;
+	font-family: Palatino;
+	background-color:#f4ece0;
+	color:#54463b;
+	border-radius: 5px;
+	border: none;
+	width:70 px;
+	margin-right: auto 0;
+	display: block;
+}
+
+.btn:hover {
+	cursor: pointer;
+	background:#ede5d8;
+	align-self: flex-start;
+}
+
+a{
+	text-decoration: none;
+}
+
+hr.tan{
+    border: 1px solid #ede5d8;
+}
+
+.move-front {
+	z-index: 2;
+}
