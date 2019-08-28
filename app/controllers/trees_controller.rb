@@ -5,16 +5,31 @@ class TreesController < ApplicationController
   # GET /trees.json
   def index
     @trees = Tree.all
+    @single = false
+    @width = 700
+    @height = 1400
+    @vx = 0
+    @vy = 0
+    @vw = 400
+    @vh = 800
   end
 
   # GET /trees/1
   # GET /trees/1.json
   def show
+    @single = true
+    @width = @height = 150
+    @vw = 80
+    @vh = 40
+    @vx = @tree.x - @vw/2
+    @vy = @tree.y - @vh/2
+    
   end
 
   # GET /trees/new
   def new
     @tree = Tree.new
+    @species = Species.all
   end
 
   # GET /trees/1/edit
@@ -69,6 +84,6 @@ class TreesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def tree_params
-      params.require(:tree).permit(:x, :y, :description)
+      params.require(:tree).permit(:x, :y, :species_id, :description)
     end
 end

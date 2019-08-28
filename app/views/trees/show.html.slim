@@ -1,14 +1,31 @@
-p#notice = notice
+p#notice 
+  = notice
+- species = Species.find(@tree.species_id)
+h2
+  = species.common_name
 
-p
-  strong X:
-  = @tree.x
-p
-  strong Y:
-  = @tree.y
-p
-  strong Description:
-  = @tree.description
+.tree-img.my-4
+  = image_tag("nococherries.png", style:"height:auto;width:100%")
+
+.row.my-3
+  .col-12.col-sm
+    h3.text-left
+        strong Description:
+    p.text-left
+      = @tree.description
+  .col-12.col-sm-auto.mt-3
+    = render 'map.html.erb'
+    p.text-center.mt-3
+      | Map coordinates: 
+      = @tree.x 
+      = " x "
+      = @tree.y
+
+h3.text-left
+  strong
+    = species.get_latin_name
+p.text-left
+  = species.description
 
 => link_to 'Edit', edit_tree_path(@tree)
 '|
