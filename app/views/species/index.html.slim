@@ -1,31 +1,36 @@
-h1 All Species
-table
-  thead
-    tr
-      th Genus
-      th Species
-      th Cultivar
-      th Hybrid
-      th Common name
-      th Description
-      th Wiki
-      th
-      th
-      th
-
-  tbody
-    - @species.each do |species|
+h1.mb-3 All Species
+.table-responsive
+  table.table
+    thead
       tr
-        td = species.genus
-        td = species.species
-        td = species.cultivar
-        td = species.hybrid
-        td = species.common_name
-        td = species.description
-        td = species.wiki
-        td = link_to 'Show', species
-        td = link_to 'Edit', edit_species_path(species)
-        td = link_to 'Destroy', species, data: { confirm: 'Are you sure?' }, method: :delete
+        th Latin name
+        th Common name
+        th Hybrid
+        th 
+        th
+        th
+        th
+
+    tbody
+      - @species.each do |species|
+        tr
+          th = species.get_latin_name
+          th = species.common_name 
+          th 
+            - if species.hybrid == true 
+              |  &#10003;
+            - if species.hybrid == false
+              | &#10007;
+          td 
+            a href=species.wiki
+              | Wiki 
+          td = link_to 'Show', species
+          td = link_to 'Edit', edit_species_path(species)
+          td = link_to 'Destroy', species, data: { confirm: 'Are you sure?' }, method: :delete
+        tr 
+          td colspan="9" 
+            = species.description
+            
 
 br
 

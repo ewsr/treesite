@@ -11,7 +11,7 @@
  * It is generally better to create a new file per style scope.
  *
  */
- 
+
  @import "bootstrap";
  @import 'bootstrap/utilities';
 
@@ -41,6 +41,15 @@ body {
 	overflow: auto;
 }
 
+.content {
+	margin: 5px auto;
+	align-self: center;
+	background-color: #f7f4ed;
+	max-width: 800px;
+    padding: 50px 70px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.116), 0 6px 20px 0 rgba(0, 0, 0, 0.075);
+}
+
 .header{
 	display: flex;
 	flex-flow: row wrap;
@@ -59,16 +68,6 @@ body {
 	text-align: center;
 }
 
-.content {
-	margin: 5px auto;
-	align-self: center;
-	background-color: #f7f4ed;
-	max-width: 800px;
-    padding: 50px 70px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.116), 0 6px 20px 0 rgba(0, 0, 0, 0.075);
-    
-}
-
 h1 {
 	font-size: 32px;
 	color: darkgreen;
@@ -77,12 +76,12 @@ h1 {
 }
 
 h2 {
-	font-size: 16px;
+	font-size: 24px;
 	color: #211c18;
 }
 
 h3 {
-	font-size: 12px;
+	font-size: 16px;
 	color: #54463b;
 }
 
@@ -145,3 +144,14 @@ hr.tan{
 .move-front {
 	z-index: 2;
 }
+
+.tree-img .img {
+	display: block;
+	margin-left: auto 10;
+	margin-right: auto 10;
+	margin-top: 20px;
+	margin-bottom:20px;
+	border-radius: 15px;
+	max-width: 100%;
+	height: auto;
+  }

@@ -28,7 +28,8 @@ p.text-right
           td = tree.y
           td = link_to 'Show', tree
           td = link_to 'Edit', edit_tree_path(tree)
-          td = link_to 'Destroy', tree, data: { confirm: 'Are you sure?' }, method: :delete
+          td = link_to 'Delete', tree_path(tree), method: :delete
+          
 .text-center
   h4 Created by Emily Wang SEAS '22
   h4 All photos by myself unless otherwise credited

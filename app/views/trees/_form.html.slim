@@ -5,7 +5,10 @@
       ul
         - @tree.errors.full_messages.each do |message|
           li = message
-
+  .r
+  .field
+    = f.label :species
+    = f.collection_select :species_id, Species.all, :id, :common_name, prompt:true
   .field
     = f.label :x
     = f.number_field :x
@@ -15,4 +18,5 @@
   .field
     = f.label :description
     = f.text_field :description
+
   .actions = f.submit

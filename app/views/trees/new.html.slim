@@ -1,5 +1,28 @@
 h1 New tree
-
-== render 'form'
-
+= form_for @tree do |f|
+  .row.mt-4
+    - if @tree.errors.any?
+      #error_explanation
+        h2 = "#{pluralize(@tree.errors.count, "error")} prohibited this tree from being saved:"
+        ul
+          - @tree.errors.full_messages.each do |message|
+            li = message
+  .row
+    .col
+      // dont fucking delete this, it's spacing LOL
+    .col-12.col-md-auto
+      h3.d-inline.mx-2 Species
+      = f.collection_select :species_id, Species.all, :id, :common_name, prompt:true
+      .field
+        = f.label :x, class: "p m-3"
+        = f.number_field :x, class: "w-25"
+      .field
+        = f.label :y, class: "p m-3"
+        = f.number_field :y , class: "w-25"
+    .col-12.col-md-auto
+      h3 Description
+      = f.text_area :description
+      = f.submit "Create", class: "btn btn-lg btn-block btn-primary my-3"
+    .col
+      // or this
 = link_to 'Back', trees_path

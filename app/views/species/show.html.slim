@@ -1,26 +1,50 @@
 p#notice = notice
 
-p
-  strong Genus:
-  = @species.genus
-p
-  strong Species:
-  = @species.species
-p
-  strong Cultivar:
-  = @species.cultivar
-p
-  strong Hybrid:
-  = @species.hybrid
-p
-  strong Common name:
-  = @species.common_name
-p
-  strong Description:
+h2
+  = @species.get_latin_name
+
+.row
+  .col-12.col-md-6
+    table.table
+      tr
+        th Common name
+        td = @species.common_name
+      tr
+        th Genus 
+        td = @species.genus
+      tr 
+        th Species
+        td = @species.species
+      - if @species.cultivar.present?
+        tr 
+          th Cultivar 
+          td = @species.cultivar
+      tr 
+        th Hybrid 
+        td
+          - if @species.hybrid == true 
+              | &#10003;
+          - if @species.hybrid == false
+              | &#10007;
+  .col-12.col-md-6
+    p image goes here 
+
+p.text-left.mb-0
+  strong Description:&nbsp;
+p.text-left
   = @species.description
-p
-  strong Wiki:
-  = @species.wiki
+
+h3 
+  strong Trees
+- if @species.trees.empty?
+  p No trees of this species yet 
+- else
+  - @species.trees.each do |tree|
+    p 
+      = tree.x 
+      = " x "
+      = tree.y
+
 
 => link_to 'Edit', edit_species_path(@species)
 '|

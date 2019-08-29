@@ -5,26 +5,28 @@
       ul
         - @species.errors.full_messages.each do |message|
           li = message
-
-  .field
-    = f.label :genus
-    = f.text_field :genus
-  .field
-    = f.label :species
-    = f.text_field :species
-  .field
-    = f.label :cultivar
-    = f.text_field :cultivar
-  .field
-    = f.label :hybrid
-    = f.check_box :hybrid
-  .field
-    = f.label :common_name
-    = f.text_field :common_name
-  .field
-    = f.label :description
-    = f.text_area :description
-  .field
-    = f.label :wiki
-    = f.text_field :wiki
-  .actions = f.submit
+  .row
+    .col-6
+      .field
+        = f.label :common_name
+        = f.text_field :common_name
+      .field
+        = f.label :genus
+        = f.text_field :genus
+      .field
+        = f.label :species
+        = f.text_field :species
+      .field
+        = f.label :cultivar
+        = f.text_field :cultivar
+      .field
+        = f.label :hybrid
+        = f.check_box :hybrid
+    .col-6
+      .field
+        = f.label :description
+        = f.text_area :description
+      .field
+        = f.label :wiki
+        = f.text_field :wiki
+      .actions = f.submit
