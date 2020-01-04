@@ -1,16 +1,16 @@
-.col-12
-  .row 
-    .header
-        h1 Trees of Columbia
-        h3 Learn more about the trees at Columbia University's Morningside Campus
-  .row.mt-n5
-    = render 'map.html.erb'
+h1.text-center Trees of Columbia
+h3.text-center Learn more about the trees at Columbia University's Morningside Campus
+p.text-center.mt-3.mb-n5.text-tan Hover to find trees
+p.text-center.mx-5
+  = render 'map.html.erb'
 p.text-right
   = link_to '+ New Tree', new_tree_path
 .text-center.my-3
+  h2 All trees
+.text-center.my-3
   table.table
     thead
-      tr
+      tr 
         th Common Name 
         th Latin Name 
         th x

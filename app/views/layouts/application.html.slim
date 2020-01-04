@@ -7,5 +7,7 @@ html
     //= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
 
   body
-    .content
-      = yield 
+    .container-fluid
+      .row.p-3
+        .col-xl-8.col-lg-10.col-md-12.p-3.mx-auto.content
+          = yield

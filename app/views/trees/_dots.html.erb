@@ -1,6 +1,10 @@
 <% if @single %>
     <circle cx="<%= @tree.x %>" cy="<%= @tree.y %>" r="3" fill="green"/>
-<% else %> 
+<% elsif @new %> 
+    <% @trees.each do |tree| %>
+         <circle cx="<%= tree.x %>" cy="<%= tree.y %>" r="3" fill="green"/>
+    <% end %>
+<% else %>
     <% @trees.each do |tree| %>
         <a href="/trees/<%= tree.id %>" class="tree decid" target="_parent">
             <circle cx="<%= tree.x %>" cy="<%= tree.y %>" r="3" fill="green"/>

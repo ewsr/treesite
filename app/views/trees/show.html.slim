@@ -1,7 +1,7 @@
 p#notice 
   = notice
 - species = Species.find(@tree.species_id)
-h2
+h2.text-center
   = species.common_name
 
 .tree-img.my-4
@@ -14,7 +14,7 @@ h2
     p.text-left
       = @tree.description
   .col-12.col-sm-auto.mt-3
-    = render 'map.html.erb'
+    = render 'thumb.html.erb'
     p.text-center.mt-3
       | Map coordinates: 
       = @tree.x 

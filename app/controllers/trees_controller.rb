@@ -6,17 +6,19 @@ class TreesController < ApplicationController
   def index
     @trees = Tree.all
     @single = false
+    @new = false
     @width = 700
     @height = 1400
     @vx = 0
     @vy = 0
     @vw = 400
-    @vh = 800
+    @vh = 750
   end
 
   # GET /trees/1
   # GET /trees/1.json
   def show
+    @new = false
     @single = true
     @width = @height = 150
     @vw = 80
@@ -28,8 +30,16 @@ class TreesController < ApplicationController
 
   # GET /trees/new
   def new
+    @trees = Tree.all
+    @new = true
     @tree = Tree.new
     @species = Species.all
+    @width = 700
+    @height = 1400
+    @vx = 0
+    @vy = 0
+    @vw = 400
+    @vh = 800
   end
 
   # GET /trees/1/edit

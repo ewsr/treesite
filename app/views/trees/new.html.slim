@@ -1,4 +1,18 @@
 h1 New tree
+
+
+button onclick="showTime()"
+  | What is the time?
+
+p id="demo"
+h1 id="box"
+  | This is box
+p id="notif"
+  | you did nothing
+
+javascript:
+  document.getElementById('box').addEventListener('mouseover', notify)
+
 = form_for @tree do |f|
   .row.mt-4
     - if @tree.errors.any?
@@ -25,4 +39,7 @@ h1 New tree
       = f.submit "Create", class: "btn btn-lg btn-block btn-primary my-3"
     .col
       // or this
+  .row 
+    //PUT THE MAP BACK WHEN READY
+    //= render 'map.html.erb'
 = link_to 'Back', trees_path

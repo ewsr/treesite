@@ -35,18 +35,11 @@
 
 body {
 	background-color: #b5c7b9;
-	margin: 20px;
 	font-family: Palatino;
-	text-align: center;
-	overflow: auto;
 }
 
 .content {
-	margin: 5px auto;
-	align-self: center;
 	background-color: #f7f4ed;
-	max-width: 800px;
-    padding: 50px 70px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.116), 0 6px 20px 0 rgba(0, 0, 0, 0.075);
 }
 
@@ -88,6 +81,11 @@ h3 {
 h4 {
 	font-size: 12px;
 	color: lightsteelblue;
+}
+
+.text-tan {
+	color: #dac3b4;
+	text-shadow: 1px 1px 5px #eedfd4;
 }
 
 .map {
